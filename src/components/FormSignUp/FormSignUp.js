@@ -5,9 +5,9 @@ import validate from "../validateInfo"
 import {FormContainer, FormInput, Label, Input, Button} from "./SignUpStyles"
 
 
-const FormSignUp = () => {
+const FormSignUp = ({submitForm}) => {
 
-    const { values, handleChange, handleSubmit, errors } = useForm(validate);
+    const { values, handleChange, handleSubmit, errors } = useForm(submitForm, validate);
 
     return (
         <>
