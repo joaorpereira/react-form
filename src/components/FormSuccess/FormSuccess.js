@@ -1,15 +1,14 @@
 import React from 'react'
-import {FormContainer, Form, Img, TextTitle} from "./SuccessStyles"
+import {Img, TextTitle} from "./SuccessStyles"
+import { FormContentLeft } from '../../globalStyles'
 
 const FormSuccess = () => {
     return (
         <>
-            <FormContainer>
-                <Form>
+            <FormContentLeft>
                     <TextTitle>We have received your request</TextTitle>
-                    <Img src="" alt="success sign-up"></Img>
-                </Form>
-            </FormContainer>
+                    <Img src="img/img-2.svg"alt="success sign-up"/>
+            </FormContentLeft>
         </>
     )
 }

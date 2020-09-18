@@ -1,8 +1,8 @@
 import React from 'react'
-import Form from '../Form/Form'
 import useForm from "../../hooks/useForm"
 import validate from "../validateInfo"
-import {FormContainer, FormInput, Label, Input, Button} from "./SignUpStyles"
+import { Form, TextTitle, FormInput, Label, Input } from "./SignUpStyles"
+import { FormContentLeft, Button } from '../../globalStyles'
 
 
 const FormSignUp = ({submitForm}) => {
@@ -11,10 +11,10 @@ const FormSignUp = ({submitForm}) => {
 
     return (
         <>
-            <FormContainer>
+            <FormContentLeft>
                 <Form onSubmit={handleSubmit}>
-                    <h1> Get started with us today! Create your account by filling out the
-          information below.</h1>
+                    <TextTitle> Create your account by filling out the
+          information below.</TextTitle>
                     <FormInput>
                         <Label htmlFor="username">Name</Label>
                         <Input 
@@ -61,7 +61,7 @@ const FormSignUp = ({submitForm}) => {
                     </FormInput>
                     <Button>Enviar</Button>
                 </Form>                
-            </FormContainer>
+            </FormContentLeft>
         </>
     )
 }

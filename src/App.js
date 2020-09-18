@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import GlobalStyle from "./globalStyles"
 import Form from './components/Form/Form';
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <GlobalStyle/>
       <Form/>
-    </div>
+    </>
   );
 }
 
