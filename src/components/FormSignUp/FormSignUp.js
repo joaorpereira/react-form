@@ -1,12 +1,13 @@
 import React from 'react'
 import Form from '../Form/Form'
 import useForm from "../../hooks/useForm"
+import validate from "../validateInfo"
 import {FormContainer, FormInput, Label, Input, Button} from "./SignUpStyles"
 
 
 const FormSignUp = () => {
 
-    const { values, handleChange, handleSubmit } = useForm();
+    const { values, handleChange, handleSubmit, errors } = useForm(validate);
 
     return (
         <>
@@ -23,6 +24,7 @@ const FormSignUp = () => {
                             placeholder="Enter your username"
                             value={values.username}
                             onChange={handleChange}/>
+                            {errors.username && <p>{errors.username}</p>}
                     </FormInput>
                     <FormInput>
                         <Label htmlFor="email">Email</Label>
@@ -33,6 +35,7 @@ const FormSignUp = () => {
                             placeholder="Enter your email"
                             value={values.email}
                             onChange={handleChange}/>
+                            {errors.email && <p>{errors.email}</p>}
                     </FormInput>
                     <FormInput>
                         <Label htmlFor="password">Password</Label>
@@ -43,6 +46,7 @@ const FormSignUp = () => {
                             placeholder="Enter your password"
                             value={values.password}
                             onChange={handleChange}/> 
+                            {errors.password && <p>{errors.password}</p>}
                     </FormInput>
                     <FormInput>
                         <Label htmlFor="password2">Confirm Password</Label>
@@ -53,10 +57,10 @@ const FormSignUp = () => {
                             placeholder="Enter your password"
                             value={values.password2}
                             onChange={handleChange}/>
+                            {errors.password2 && <p>{errors.password2}</p>}
                     </FormInput>
                     <Button>Enviar</Button>
-                </Form>
-                
+                </Form>                
             </FormContainer>
         </>
     )
